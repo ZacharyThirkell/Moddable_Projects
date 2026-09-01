@@ -1,0 +1,12 @@
+{
+  "include": ["$(MODDABLE)/examples/manifest_base.json"],
+  "modules": {
+    "*": "./main",
+    "pins/*": "$(MODULES)/pins/i2s/*"
+  },
+  "defines": { "audioOut": { "queueLength": 8 } },
+  "platforms": {
+    "mac": { "defines": { "audioOut": { "bitsPerSample": 16, "numChannels": 1, "sampleRate": 11025 } } },
+    "esp32": { "defines": { "audioOut": { "bitsPerSample": 16, "numChannels": 1, "sampleRate": 11025 } } }
+  }
+}
